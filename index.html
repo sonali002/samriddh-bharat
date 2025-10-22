@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Samriddh-Bharat</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>Samriddh-<span>Bharat</span></h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#home" class="active">Home</a></li>
+                    <li><a href="#scheme-eligibility-checker">Scheme Eligibility</a></li>
+                    <li><a href="#govt-schemes">Government Schemes</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Samriddh-Bharat</h1>
+                <p>Your one-stop portal for all government schemes and benefits you may be eligible for</p>
+                <div class="search-box">
+                    <input type="text" id="search-input" placeholder="Search for schemes...">
+                    <button id="search-btn"><i class="fas fa-search"></i></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="scheme-eligibility-checker">
+        <div class="container">
+            <h2 class="section-title">Check Your Scheme Eligibility</h2>
+            <p class="section-description">Fill out the form below to find government schemes that you may be eligible for.</p>
+            
+            <form id="scheme-eligibility-form" class="scheme-eligibility-form">
+                <div class="form-group">
+                    <label for="age">Age (in years)</label>
+                    <input type="number" id="age" class="form-control" min="18" max="80" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="annual-income">Annual Income (in ₹)</label>
+                    <input type="number" id="annual-income" class="form-control" min="0" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="social-category">Social Category</label>
+                    <select id="social-category" class="form-control" required>
+                        <option value="">Select Category</option>
+                        <option value="general">General</option>
+                        <option value="obc">OBC</option>
+                        <option value="sc">SC</option>
+                        <option value="st">ST</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="occupation">Occupation</label>
+                    <select id="occupation" class="form-control" required>
+                        <option value="">Select Occupation</option>
+                        <option value="student">Student</option>
+                        <option value="farmer">Farmer</option>
+                        <option value="business">Business Owner</option>
+                        <option value="employed">Employed</option>
+                        <option value="unemployed">Unemployed</option>
+                        <option value="retired">Retired</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label>Interested Scheme Types</label>
+                    <div class="checkbox-group">
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="financial" name="scheme-types" value="financial">
+                            <label for="financial">Financial Investment</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="education" name="scheme-types" value="education">
+                            <label for="education">Education</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="welfare" name="scheme-types" value="welfare">
+                            <label for="welfare">Social Welfare</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="agriculture" name="scheme-types" value="agriculture">
+                            <label for="agriculture">Agriculture</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="housing" name="scheme-types" value="housing">
+                            <label for="housing">Housing</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="health" name="scheme-types" value="health">
+                            <label for="health">Healthcare</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <button type="submit" class="btn btn-primary">Check Eligibility</button>
+            </form>
+            
+            <div id="scheme-eligibility-results" class="scheme-eligibility-results hidden">
+                <h3>Eligible Government Schemes</h3>
+                <div id="eligible-schemes-list"></div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <section id="govt-schemes">
+        <div class="container">
+            <h2 class="section-title">Government Schemes</h2>
+            <p class="section-description">Explore government schemes you may be eligible for based on your profile</p>
+            
+            <div class="schemes-container">
+                <div class="scheme-category">
+                    <h3>Financial Investment Schemes</h3>
+                    <div class="schemes-grid">
+                        <div class="scheme-card">
+                            <div class="scheme-icon">
+                                <i class="fas fa-piggy-bank"></i>
+                            </div>
+                            <h4>Public Provident Fund (PPF)</h4>
+                            <p>Long-term savings scheme with tax benefits under Section 80C. Offers interest rates determined by government quarterly.</p>
+                            <ul class="scheme-features">
+                                <li><strong>Interest Rate:</strong> 7.1% p.a. (variable)</li>
+                                <li><strong>Lock-in Period:</strong> 15 years</li>
+                                <li><strong>Min Investment:</strong> ₹500 per year</li>
+                                <li><strong>Max Investment:</strong> ₹1.5 lakh per year</li>
+                            </ul>
+                            <a href="https://www.indiapost.gov.in/Financial/Pages/Content/Post-Office-Saving-Schemes.aspx" class="btn btn-scheme">Learn More</a>
+                        </div>
+                        
+                        <div class="scheme-card">
+                            <div class="scheme-icon">
+                                <i class="fas fa-user-shield"></i>
+                            </div>
+                            <h4>Sukanya Samriddhi Yojana</h4>
+                            <p>Small savings scheme for girl child education and marriage expenses with tax benefits.</p>
+                            <ul class="scheme-features">
+                                <li><strong>Interest Rate:</strong> 7.6% p.a. (variable)</li>
+                                <li><strong>Eligibility:</strong> Parents of girl child below 10 years</li>
+                                <li><strong>Min Investment:</strong> ₹250 per year</li>
+                                <li><strong>Max Investment:</strong> ₹1.5 lakh per year</li>
+                            </ul>
+                            <a href="https://www.indiapost.gov.in/Financial/Pages/Content/Sukanya-Samriddhi-Account.aspx" class="btn btn-scheme">Learn More</a>
+                        </div>
+                        
+                        <div class="scheme-card">
+                            <div class="scheme-icon">
+                                <i class="fas fa-home"></i>
+                            </div>
+                            <h4>National Pension System (NPS)</h4>
+                            <p>Voluntary retirement savings scheme to enable systematic savings for retirement.</p>
+                            <ul class="scheme-features">
+                                <li><strong>Returns:</strong> Market-linked</li>
+                                <li><strong>Tax Benefits:</strong> Under Section 80C and 80CCD</li>
+                                <li><strong>Min Contribution:</strong> ₹500 per month</li>
+                                <li><strong>Withdrawal:</strong> Partial allowed at 60 years</li>
+                            </ul>
+                            <a href="https://www.npscra.nsdl.co.in/" class="btn btn-scheme">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="scheme-category">
+                    <h3>Andhra Pradesh Government Schemes</h3>
+                    <div class="schemes-grid">
+                        <div class="scheme-card">
+                            <div class="scheme-icon">
+                                <i class="fas fa-graduation-cap"></i>
+                            </div>
+                            <h4>Jagananna Vidya Deevena</h4>
+                            <p>Full reimbursement of college fees for eligible students pursuing higher education.</p>
+                            <ul class="scheme-features">
+                                <li><strong>Eligibility:</strong> Students from families with annual income below ₹2.5 lakh</li>
+                                <li><strong>Benefit:</strong> 100% fee reimbursement</li>
+                                <li><strong>Disbursement:</strong> Quarterly basis</li>
+                            </ul>
+                            <a href="https://jnanabhumi.ap.gov.in/" class="btn btn-scheme">Learn More</a>
+                        </div>
+                        
+                        <div class="scheme-card">
+                            <div class="scheme-icon">
+                                <i class="fas fa-hand-holding-usd"></i>
+                            </div>
+                            <h4>YSR Cheyutha</h4>
+                            <p>Financial assistance to women of SC, ST, BC, and Minority communities aged 45-60 years.</p>
+                            <ul class="scheme-features">
+                                <li><strong>Eligibility:</strong> Women aged 45-60 from SC, ST, BC, Minority communities</li>
+                                <li><strong>Benefit:</strong> ₹75,000 over 4 years (₹18,750 per annum)</li>
+                                <li><strong>Purpose:</strong> Economic empowerment and self-reliance</li>
+                            </ul>
+                            <a href="https://ysrcheyutha.ap.gov.in/" class="btn btn-scheme">Learn More</a>
+                        </div>
+                        
+                        <div class="scheme-card">
+                            <div class="scheme-icon">
+                                <i class="fas fa-tractor"></i>
+                            </div>
+                            <h4>YSR Rythu Bharosa</h4>
+                            <p>Financial assistance to farmer families to support agricultural investment.</p>
+                            <ul class="scheme-features">
+                                <li><strong>Eligibility:</strong> All farmer families including tenants</li>
+                                <li><strong>Benefit:</strong> ₹13,500 per year</li>
+                                <li><strong>Disbursement:</strong> Three installments per year</li>
+                            </ul>
+                            <a href="https://rythubarosa.ap.gov.in/" class="btn btn-scheme">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="scheme-eligibility">
+                <h3>Check Your Scheme Eligibility</h3>
+                <p>Answer a few questions to find out which government schemes you may be eligible for</p>
+                <a href="#eligibility-checker" class="btn btn-primary">Check Eligibility Now</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="about">
+        <div class="container">
+            <h2 class="section-title">About This Portal</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>GovExams Portal is a comprehensive resource designed to help aspirants find accurate and up-to-date information about various government examinations in India. Our mission is to simplify the process of finding and applying for government jobs by providing all essential information in one place.</p>
+                    <p>We regularly update our database to ensure you have access to the latest examination notifications, important dates, eligibility criteria, and direct application links.</p>
+                </div>
+                <div class="features">
+                    <div class="feature">
+                        <i class="fas fa-check-circle"></i>
+                        <h3>Verified Information</h3>
+                        <p>All exam details are verified from official sources</p>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-bell"></i>
+                        <h3>Timely Updates</h3>
+                        <p>Get the latest notifications about upcoming exams</p>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-link"></i>
+                        <h3>Direct Links</h3>
+                        <p>Apply directly through official application links</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="container">
+            <h2 class="section-title">Contact Us</h2>
+            <div class="contact-content">
+                <div class="contact-form">
+                    <form id="contact-form">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn">Send Message</button>
+                    </form>
+                </div>
+                <div class="contact-info">
+                    <div class="info-item">
+                        <i class="fas fa-envelope"></i>
+                        <p>kk8437601@gmail.com</p>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-phone"></i>
+                        <p>7009792112</p>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <p>Mohali,India</p>
+                    </div>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h2>GovExams<span>Portal</span></h2>
+                    <p>Your guide to government career opportunities</p>
+                </div>
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#scheme-eligibility-checker">Scheme Eligibility</a></li>
+                        <li><a href="#govt-schemes">Government Schemes</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-newsletter">
+                    <h3>Stay Updated</h3>
+                    <p>Subscribe to our newsletter for the latest exam notifications</p>
+                    <div class="newsletter-form">
+                        <input type="email" placeholder="Your Email Address">
+                        <button type="submit">Subscribe</button>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 GovExams Portal. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
